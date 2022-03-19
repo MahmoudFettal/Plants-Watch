@@ -1,21 +1,8 @@
-import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useState, useEffect, useRef } from "react";
 import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import { DropzoneDialog } from "material-ui-dropzone";
 import { CardMedia } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
-import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
-import { styled } from "@mui/system";
-import ModalUnstyled from "@mui/base/ModalUnstyled";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { DropzoneArea } from "material-ui-dropzone";
 
@@ -46,7 +33,7 @@ function Home() {
   let confidence = 0;
 
   useEffect(() => {
-    if (!open) predictionsScroll();
+    if (!open && data) predictionsScroll();
   }, [open]);
 
   const sendFile = async () => {
@@ -111,41 +98,10 @@ function Home() {
     predictions.current.scrollIntoView();
   };
 
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState(open);
-  };
-
   const plantHandler = (e) => {
     setPlant(e.target.value);
     console.log(plant);
   };
-
-  const list = () => (
-    <Box
-      className="w-75 md:w-33"
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
 
   return (
     <>
@@ -161,14 +117,7 @@ function Home() {
       >
         <div className="flex flex-col w-screen h-screen px-20 py-10 bg-black/25 items-center justify-between">
           <nav className="flex w-full justify-between items-center">
-            <img
-              onClick={toggleDrawer(true)}
-              src="/plantswatch.svg"
-              alt="logo"
-            />
-            <Drawer open={state} onClose={toggleDrawer(false)}>
-              {list()}
-            </Drawer>
+            <img src="/plantswatch.svg" alt="logo" />
             <a href="#" className="bg-white text-md text-font px-4 py-2">
               Get in Touch <ArrowForwardIcon />
             </a>
@@ -249,24 +198,22 @@ function Home() {
           </a>
         </div>
       </div>
-      <div
-        id="predictions"
-        ref={predictions}
-        className="grid justify-items-center w-full px-20 py-10"
-      >
-        <div className="flex item-center justify-center self-center gap-x-20">
-          <div>
+      {data && (
+        <div
+          id="predictions"
+          ref={predictions}
+          className="grid justify-items-center w-full px-20 py-10"
+        >
+          <div className="flex item-center justify-center self-center gap-x-20">
             <div>
-              {image && (
+              <div>
                 <CardMedia
                   className="w-96 h-96 rounded-lg"
                   image={preview}
                   component="image"
                 ></CardMedia>
-              )}
+              </div>
             </div>
-          </div>
-          {data && (
             <div>
               <div className="flex gap-x-20 mb-5">
                 <div id="prediction">
@@ -293,9 +240,9 @@ function Home() {
                 blanditiis deserunt voluptas sit obcaecati quaerat?
               </p>
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

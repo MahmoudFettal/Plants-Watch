@@ -23,7 +23,7 @@ app.add_middleware(
 )
 
 MODEL_PEPPER = tf.keras.models.load_model("../models/pepper_1")
-MODEL_POTATO = tf.keras.models.load_model("../models/pepper_1")
+MODEL_POTATO = tf.keras.models.load_model("../models/potato_1")
 
 CLASS_NAMES_PEPPER = ["Bacterial Spot", "Healthy"]
 CLASS_NAMES_POTATO = ["Early Blight", "Late Blight", "Healthy"]
@@ -31,7 +31,7 @@ CLASS_NAMES_POTATO = ["Early Blight", "Late Blight", "Healthy"]
 
 def read_file_as_image(data):
     image = np.array(Image.open(BytesIO(data)))
-    return image
+    return tf.image.resize(image, [256, 256])
 
 @app.post("/predict_pepper")
 async def predict(
