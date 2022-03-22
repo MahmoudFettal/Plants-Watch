@@ -4,10 +4,10 @@
 </h1>
   
 <p>
-   <a href="https://github.com/MahmoudFettal/Weekly-Data-Projects/blob/master/LICENSE">
+   <a href="https://github.com/MahmoudFettal/Plants-Watch/blob/master/LICENSE">
       <img alt="GitHub Licence" src="https://img.shields.io/github/license/MahmoudFettal/Plants-Watch?style=for-the-badge&label=License"/>
    </a> 
-   <a href="https://github.com/MahmoudFettal/Weekly-Data-Projects/issues">
+   <a href="https://github.com/MahmoudFettal/Plants-Watch/issues">
       <img alt="GitHub issues" src="https://img.shields.io/github/issues/MahmoudFettal/Plants-Watch?style=for-the-badge&label=Issues"/>
    </a> 
    <a href="https://github.com/MahmoudFettal/Plants-Watch/network/members">
