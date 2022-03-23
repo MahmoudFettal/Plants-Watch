@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Plants-Watch/static/css/main.a2433d8d.css",
-    "main.js": "/Plants-Watch/static/js/main.1c5b8a7e.js",
+    "main.js": "/Plants-Watch/static/js/main.31dfe28e.js",
     "static/js/787.cda612ba.chunk.js": "/Plants-Watch/static/js/787.cda612ba.chunk.js",
     "index.html": "/Plants-Watch/index.html",
     "main.a2433d8d.css.map": "/Plants-Watch/static/css/main.a2433d8d.css.map",
-    "main.1c5b8a7e.js.map": "/Plants-Watch/static/js/main.1c5b8a7e.js.map",
+    "main.31dfe28e.js.map": "/Plants-Watch/static/js/main.31dfe28e.js.map",
     "787.cda612ba.chunk.js.map": "/Plants-Watch/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2433d8d.css",
-    "static/js/main.1c5b8a7e.js"
+    "static/js/main.31dfe28e.js"
   ]
 }
