@@ -115,7 +115,7 @@ function Home() {
       >
         <div className="flex flex-col w-screen h-screen px-20 py-10 bg-black/25 items-center justify-between">
           <nav className="flex w-full justify-between items-center">
-            <img src="/plantswatch.svg" alt="logo" />
+            <img src="/plantswatch.png" alt="logo" />
             <a href="#" className="bg-white text-md text-font px-4 py-2">
               Get in Touch <ArrowForwardIcon />
             </a>
@@ -192,7 +192,7 @@ function Home() {
             </Modal>
           </div>
           <a href="#predictions">
-            <img src="/scroll_down.svg" alt="scroll down" />
+            <img src="/scroll_down.png" alt="scroll down" />
           </a>
         </div>
       </div>
