@@ -29,8 +29,11 @@
 </p>
 
 <h2><b>About the project</b></h2>
-<p>
-   MLSA project for Green Tech prototype sprint
-  <br><br><br>
-   <b>More information will be provided soon!<b>
-</p>
+
+![](https://github.com/MahmoudFettal/Plants-Watch/blob/master/frontend/src/PlantsWatch.gif)
+<br>
+<br>
+This project was part of the Microsoft Learn Student Ambassadors Program and it is a collaboration of all memebers if the team.
+<br> <br>
+This project provides uses computer vision to detect plant diseas in Pepper and Potato, it uses tensorflow for the AI model, and a Fast API to connect the model to the frontend application build with React.
+
