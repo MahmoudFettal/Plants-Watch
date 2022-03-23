@@ -17,7 +17,6 @@ const style = {
   p: 4,
 };
 function Home() {
-  const [state, setState] = useState(false);
   const [open, setOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
@@ -26,7 +25,6 @@ function Home() {
   const [plant, setPlant] = useState("potato");
   const [enter, setEnter] = useState(false);
   const [isLoading, setIsloading] = useState(false);
-  const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
   };
@@ -42,7 +40,7 @@ function Home() {
       formData.append("file", selectedFile);
       let res = await axios({
         method: "post",
-        url: `http://localhost:8000/predict_${plant}`,
+        url: `https://plantwatch2.azurewebsites.net/predict_${plant}`,
         data: formData,
       });
       if (res.status === 200) {
@@ -117,7 +115,7 @@ function Home() {
       >
         <div className="flex flex-col w-screen h-screen px-20 py-10 bg-black/25 items-center justify-between">
           <nav className="flex w-full justify-between items-center">
-            <img src="/plantswatch.svg" alt="logo" />
+            <p> </p>
             <a href="#" className="bg-white text-md text-font px-4 py-2">
               Get in Touch <ArrowForwardIcon />
             </a>
@@ -193,9 +191,7 @@ function Home() {
               </Box>
             </Modal>
           </div>
-          <a href="#predictions">
-            <img src="/scroll_down.svg" alt="scroll down" />
-          </a>
+          <p></p>
         </div>
       </div>
       {data && (
