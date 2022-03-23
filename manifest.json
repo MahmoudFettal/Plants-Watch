@@ -4,11 +4,13 @@
   "icons": [
     {
       "src": "plantswatch.svg",
-      "type": "image/svg"
+      "type": "image/png",
+      "sizes": "512x512"
     },
     {
       "src": "scroll_down.svg",
-      "type": "image/svg"
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
