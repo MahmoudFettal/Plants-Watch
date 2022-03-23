@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://MahmoudFettal.github.io/Plants-Watch/frontend",
+  "homepage": "https://MahmoudFettal.github.io/Plants-Watch",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",
