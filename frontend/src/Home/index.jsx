@@ -40,7 +40,7 @@ function Home() {
       formData.append("file", selectedFile);
       let res = await axios({
         method: "post",
-        url: `https://plantwatch2.azurewebsites.net/predict_${plant}`,
+        url: `https://plantwatch1.azurewebsites.net/predict_${plant}`,
         data: formData,
       });
       if (res.status === 200) {
