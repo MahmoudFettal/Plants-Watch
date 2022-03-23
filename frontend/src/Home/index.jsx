@@ -17,7 +17,6 @@ const style = {
   p: 4,
 };
 function Home() {
-  const [state, setState] = useState(false);
   const [open, setOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
@@ -26,7 +25,6 @@ function Home() {
   const [plant, setPlant] = useState("potato");
   const [enter, setEnter] = useState(false);
   const [isLoading, setIsloading] = useState(false);
-  const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
   };
@@ -42,7 +40,7 @@ function Home() {
       formData.append("file", selectedFile);
       let res = await axios({
         method: "post",
-        url: `http://localhost:8000/predict_${plant}`,
+        url: `https://plantwatch2.azurewebsites.net/predict_${plant}`,
         data: formData,
       });
       if (res.status === 200) {
