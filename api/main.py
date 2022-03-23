@@ -11,6 +11,7 @@ import tensorflow as tf
 app = FastAPI()
 
 origins = [
+    "https://mahmoudfettal.github.io/",
     "http://localhost",
     "http://localhost:3000",
 ]
