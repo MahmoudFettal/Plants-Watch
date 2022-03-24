@@ -1,5 +1,6 @@
-
-
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
@@ -11,7 +12,7 @@ import tensorflow as tf
 app = FastAPI()
 
 origins = [
-    "https://mahmoudfettal.github.io/",
+    "https://mahmoudfettal.github.io",
     "http://localhost",
     "http://localhost:3000",
 ]
@@ -23,8 +24,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL_PEPPER = tf.keras.models.load_model("../models/pepper_1")
-MODEL_POTATO = tf.keras.models.load_model("../models/potato_1")
+MODEL_PEPPER = tf.keras.models.load_model("app/models/pepper_1")
+MODEL_POTATO = tf.keras.models.load_model("app/models/potato_1")
 
 CLASS_NAMES_PEPPER = ["Bacterial Spot", "Healthy"]
 CLASS_NAMES_POTATO = ["Early Blight", "Late Blight", "Healthy"]
@@ -67,5 +68,5 @@ async def predict(
     }
 
 if __name__ == "__main__":
-    uvicorn.run(app, host='localhost', port=8000)
+    uvicorn.run(app, host='0.0.0.0')
 
